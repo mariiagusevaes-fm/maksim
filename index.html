@@ -535,6 +535,328 @@
       color: var(--charcoal);
     }
 
+    /* ─── PRICING ─── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .price-card {
+      background: var(--warm-white);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+
+    .price-card:hover { background: #fff; }
+
+    .price-card--accent { background: var(--charcoal); }
+    .price-card--accent:hover { background: #252525; }
+    .price-card--accent .price-tag { color: var(--accent-light); }
+    .price-card--accent h3 { color: #fff; }
+    .price-card--accent .price-desc { color: rgba(255,255,255,0.5); }
+    .price-card--accent .price-ideal { color: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.1); }
+
+    .price-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .price-card h3 {
+      font-size: 1rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .price-desc {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .price-ideal {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pricing-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 24px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+
+    .pricing-note svg { color: var(--accent-light); flex-shrink: 0; margin-top: 2px; }
+    .pricing-note p { font-size: 0.83rem; color: var(--mid); }
+
+    /* ─── FORM ─── */
+    #questionnaire { background: var(--warm-white); }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .form-left h2 { margin-bottom: 16px; }
+    .form-left p { margin-bottom: 12px; font-size: 0.9rem; }
+
+    .form-steps {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .form-step-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .form-step p { font-size: 0.82rem; margin: 0; }
+
+    .anketa {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-group label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      width: 100%;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 13px 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .field-group input:focus,
+    .field-group select:focus,
+    .field-group textarea:focus {
+      border-color: var(--accent-light);
+      background: #fff;
+    }
+
+    .field-group textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .radio-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.85rem;
+      color: var(--mid);
+    }
+
+    .radio-option:has(input:checked) {
+      border-color: var(--accent-light);
+      background: #fff;
+      color: var(--charcoal);
+    }
+
+    .radio-option input[type="radio"] {
+      width: 14px; height: 14px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .contact-row select { width: auto; min-width: 130px; }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--charcoal);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+
+    .btn-submit:hover { background: #333; }
+    .btn-submit:disabled { background: var(--light); cursor: not-allowed; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+
+    .form-success.show { display: block; }
+    .form-success h3 { margin-bottom: 12px; }
+    .form-success p { font-size: 0.88rem; }
+
+    .form-disclaimer {
+      font-size: 0.72rem;
+      color: var(--light);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ─── REVIEWS ─── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: box-shadow 0.2s;
+    }
+
+    .review-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+    .review-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      color: var(--accent-light);
+      line-height: 0.8;
+    }
+
+    .review-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--mid);
+      flex: 1;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .review-initials {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .review-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--light);
+      margin-top: 2px;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: var(--cream);
@@ -622,6 +944,12 @@
       .photo-frame { max-width: 280px; margin: 0 auto; }
       .photo-frame::before { display: none; }
 
+      .pricing-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .form-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .field-row { grid-template-columns: 1fr; }
+      .radio-group { grid-template-columns: 1fr; }
+      .contact-row { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-facts { grid-template-columns: 1fr 1fr; }
 
@@ -655,6 +983,8 @@
       <ul class="nav-links">
         <li><a href="#about">О специалисте</a></li>
         <li><a href="#services">Услуги</a></li>
+        <li><a href="#pricing">Стоимость</a></li>
+        <li><a href="#questionnaire">Анкета</a></li>
         <li><a href="#process">Как работаем</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
@@ -671,7 +1001,10 @@
     <span class="mobile-menu-close" id="menuClose">&times;</span>
     <a href="#about" class="menu-link">О специалисте</a>
     <a href="#services" class="menu-link">Услуги</a>
+    <a href="#pricing" class="menu-link">Стоимость</a>
+    <a href="#questionnaire" class="menu-link">Анкета</a>
     <a href="#process" class="menu-link">Как работаем</a>
+    <a href="#reviews" class="menu-link">Отзывы</a>
     <a href="#contact" class="menu-link">Контакты</a>
   </div>
 
@@ -700,15 +1033,7 @@
 ```
   <div class="hero-image-wrap container fade-up" style="--delay: 0.2s">
     <div class="photo-frame">
-      <!-- Когда будет фото, замените .photo-placeholder на: -->
-      <!-- <img src="photo.jpg" alt="Максим, банковский консультант в Испании" /> -->
-      <div class="photo-placeholder">
-        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="service-icon">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span>Фото Максима</span>
-      </div>
+      <img src="photo.jpg" alt="Максим, банковский консультант в Испании" style="position:relative;z-index:1;width:100%;height:auto;display:block;border-radius:2px;object-fit:cover;aspect-ratio:3/4;" />
     </div>
   </div>
 </div>
@@ -732,7 +1057,7 @@
           <p class="about-text">Нахожусь в Барселоне. Работаю лично и дистанционно по всей Испании.</p>
           <div class="about-facts">
             <div class="fact">
-              <div class="fact-num">10+</div>
+              <div class="fact-num">15+</div>
               <div class="fact-label">лет в банковской сфере</div>
             </div>
             <div class="fact">
@@ -819,6 +1144,59 @@
 
   </section>
 
+  <!-- PRICING -->
+
+  <section id="pricing" style="background:var(--cream)">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="about-label" style="color:var(--accent)">Стоимость</p>
+        <h2>Прозрачные условия</h2>
+        <div class="divider"></div>
+        <p style="max-width:560px;margin-top:4px">Я работаю на стороне клиента — не банка. Это означает независимую оценку вашей ситуации и рекомендации, которые отвечают вашим интересам.</p>
+      </div>
+
+```
+  <div class="pricing-grid">
+
+    <div class="price-card fade-up">
+      <div class="price-tag">от €80</div>
+      <h3>Консультация</h3>
+      <p class="price-desc">60 минут: разбираем вашу ситуацию, какие банки подходят, что реально получить и какие документы нужны.</p>
+      <div class="price-ideal">Подходит для первого шага</div>
+    </div>
+
+    <div class="price-card fade-up">
+      <div class="price-tag">от €150</div>
+      <h3>Открытие счёта</h3>
+      <p class="price-desc">Консультация + подготовка документов. Подбор банка под вашу ситуацию, объяснение нюансов, сопровождение.</p>
+      <div class="price-ideal">Для новых резидентов</div>
+    </div>
+
+    <div class="price-card price-card--accent fade-up">
+      <div class="price-tag">от €300</div>
+      <h3>Потребительский кредит / автокредит</h3>
+      <p class="price-desc">Анализ ситуации, подбор банка, помощь с документами, консультация по переговорам. Под ключ.</p>
+      <div class="price-ideal">Полное сопровождение</div>
+    </div>
+
+    <div class="price-card fade-up">
+      <div class="price-tag">от €500</div>
+      <h3>Ипотека — консультация и подготовка</h3>
+      <p class="price-desc">Разбор ситуации, какие банки работают с мигрантами и нерезидентами, что подготовить, на какие условия реально рассчитывать.</p>
+      <div class="price-ideal">Без скрытых комиссий от банка</div>
+    </div>
+
+  </div>
+
+  <div class="pricing-note fade-up">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p>Точная стоимость зависит от сложности ситуации. Обсудим на первой консультации — без обязательств.</p>
+  </div>
+</div>
+```
+
+  </section>
+
   <!-- PROCESS -->
 
   <section id="process">
@@ -865,6 +1243,191 @@
 
   </section>
 
+  <!-- QUESTIONNAIRE -->
+
+  <section id="questionnaire">
+    <div class="container">
+      <div class="form-wrap">
+
+```
+    <div class="form-left fade-up">
+      <p class="about-label" style="color:var(--accent)">Анкета</p>
+      <h2>Расскажите<br>о вашей<br>ситуации</h2>
+      <div class="divider"></div>
+      <p>Заполните анкету перед консультацией — это поможет мне подготовиться и сразу дать конкретный ответ, а не общие слова.</p>
+      <p>Анкета занимает 2–3 минуты.</p>
+      <div class="form-steps">
+        <div class="form-step">
+          <div class="form-step-num">1</div>
+          <p>Заполняете анкету</p>
+        </div>
+        <div class="form-step">
+          <div class="form-step-num">2</div>
+          <p>Я изучаю вашу ситуацию и пишу вам в течение дня</p>
+        </div>
+        <div class="form-step">
+          <div class="form-step-num">3</div>
+          <p>Договариваемся о времени консультации</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-up">
+      <!-- ВАЖНО: замените YOUR_FORM_ID на ID из Formspree (см. инструкцию ниже) -->
+      <form class="anketa" id="anketa"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST">
+
+        <div class="field-row">
+          <div class="field-group">
+            <label for="f-name">Имя *</label>
+            <input type="text" id="f-name" name="name" placeholder="Александр" required />
+          </div>
+          <div class="field-group">
+            <label for="f-city">Город / регион</label>
+            <input type="text" id="f-city" name="city" placeholder="Барселона" />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Ваш статус в Испании *</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="status" value="Резидент" required />
+              Резидент
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="status" value="Нерезидент" />
+              Нерезидент
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="status" value="В процессе оформления" />
+              В процессе оформления
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="status" value="Другое" />
+              Другое
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>С каким вопросом обращаетесь? *</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="topic" value="Открытие счёта" required />
+              Открытие счёта
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="topic" value="Ипотека" />
+              Ипотека
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="topic" value="Кредит / автокредит" />
+              Кредит / автокредит
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="topic" value="Другой вопрос" />
+              Другой вопрос
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="f-desc">Кратко опишите ситуацию *</label>
+          <textarea id="f-desc" name="description"
+            placeholder="Например: переехал 6 месяцев назад, есть ВНЖ, работаю по контракту, хочу открыть счёт в CaixaBank..." required></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Как удобно связаться? *</label>
+          <div class="contact-row">
+            <select name="contact_type">
+              <option value="Telegram">Telegram</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Email">Email</option>
+            </select>
+            <input type="text" name="contact_value" placeholder="@username или номер телефона" required />
+          </div>
+        </div>
+
+        <!-- скрытое поле — откуда пришёл -->
+        <input type="hidden" name="_subject" value="Новая анкета с сайта maxim-spain" />
+        <input type="hidden" name="_language" value="ru" />
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Отправить анкету
+        </button>
+
+        <p class="form-disclaimer">Данные используются только для подготовки к консультации и никому не передаются.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3>Анкета отправлена</h3>
+        <p>Я получил вашу заявку и свяжусь с вами в течение дня.<br>Спасибо, что нашли время заполнить.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- REVIEWS -->
+
+  <section id="reviews" style="background:var(--cream)">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="about-label" style="color:var(--accent)">Отзывы</p>
+        <h2>Что говорят клиенты</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="reviews-grid">
+
+```
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Переехали в Испанию год назад, долго не могли разобраться с банком. Максим объяснил всё по шагам, помог собрать документы и сопроводил на встречу. Счёт открыли с первого раза.</p>
+      <div class="review-author">
+        <div class="review-initials">АК</div>
+        <div>
+          <div class="review-name">Алексей К.</div>
+          <div class="review-meta">Барселона · Открытие счёта</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Хотела взять ипотеку, но не понимала, с чего начать как нерезидент. Максим честно объяснил, что реально, а что нет в моей ситуации — и это сэкономило мне несколько месяцев хождений по банкам.</p>
+      <div class="review-author">
+        <div class="review-initials">ЕМ</div>
+        <div>
+          <div class="review-name">Елена М.</div>
+          <div class="review-meta">Мадрид · Консультация по ипотеке</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Помог оформить автокредит — я даже не думал, что это возможно в моём статусе. Всё объяснил заранее, никаких сюрпризов. Отдельный плюс — всё общение на русском, без языкового барьера.</p>
+      <div class="review-author">
+        <div class="review-initials">ДВ</div>
+        <div>
+          <div class="review-name">Дмитрий В.</div>
+          <div class="review-meta">Валенсия · Автокредит</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+```
+
+  </section>
+
   <!-- CONTACT -->
 
   <section id="contact">
@@ -880,7 +1443,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
               Написать в Telegram
             </a>
-            <a href="https://wa.me/79167601515" target="_blank" class="btn-wa">
+            <a href="https://wa.me/34656557670" target="_blank" class="btn-wa">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
               Написать в WhatsApp
             </a>
@@ -913,7 +1476,7 @@
         <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
         <div>
           <p class="info-label">WhatsApp</p>
-          <p class="info-val"><a href="https://wa.me/79167601515" target="_blank" style="color:var(--charcoal)">+7 916 760-15-15</a></p>
+          <p class="info-val"><a href="https://wa.me/34656557670" target="_blank" style="color:var(--charcoal)">+34 656 557 670</a></p>
         </div>
       </div>
       <div class="info-item">
@@ -929,7 +1492,7 @@
         </svg>
         <div>
           <p class="info-label">Язык консультаций</p>
-          <p class="info-val">Русский · Испанский</p>
+          <p class="info-val">Русский</p>
         </div>
       </div>
       <div class="info-item">
@@ -1002,6 +1565,38 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ─── Form submission ───
+    const anketa = document.getElementById('anketa');
+    const formSuccess = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (anketa) {
+      anketa.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправляем...';
+        try {
+          const res = await fetch(anketa.action, {
+            method: 'POST',
+            body: new FormData(anketa),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            anketa.style.display = 'none';
+            formSuccess.classList.add('show');
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Отправить анкету';
+            alert('Что-то пошло не так. Напишите напрямую в Telegram: @maxim_spain');
+          }
+        } catch {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить анкету';
+          alert('Ошибка соединения. Напишите напрямую в Telegram: @maxim_spain');
+        }
+      });
+    }
 
     // ─── Stagger children in grids ───
     document.querySelectorAll('.services-grid .service-card, .steps .step').forEach((el, i) => {
