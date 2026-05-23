@@ -533,7 +533,6 @@
 
     .step {
       padding: 0 24px 0 0;
-      position: relative;
     }
 
     .step-num {
@@ -541,17 +540,13 @@
       font-size: 2.8rem;
       color: rgba(255,255,255,0.07);
       line-height: 1;
-      margin-bottom: 0;
-      position: relative;
     }
 
     .step-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent-light);
-      margin: 14px 0 24px;
-      position: relative;
-      z-index: 1;
+      margin: 14px 0 20px;
     }
 
     .step h3 {
@@ -568,51 +563,6 @@
       font-size: 0.82rem;
       color: rgba(255,255,255,0.4);
       line-height: 1.7;
-    }
-
-    /* mobile: vertical timeline */
-    @media (max-width: 700px) {
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .steps::before { display: none; }
-      .step {
-        display: grid;
-        grid-template-columns: 40px 1fr;
-        gap: 0 20px;
-        padding: 0 0 36px;
-        align-items: start;
-      }
-      .step:last-child { padding-bottom: 0; }
-      .step-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .step-dot { margin: 4px 0 0; }
-      .step-connector {
-        width: 1px;
-        flex: 1;
-        min-height: 60px;
-        background: rgba(255,255,255,0.08);
-        margin-top: 8px;
-      }
-      .step:last-child .step-connector { display: none; }
-      .step-num {
-        font-size: 1.6rem;
-        color: rgba(255,255,255,0.12);
-        text-align: center;
-        line-height: 1;
-        margin-bottom: 2px;
-      }
-      .step-right { padding-top: 0; }
-    }
-
-    @media (min-width: 701px) {
-      .step-left { display: contents; }
-      .step-connector { display: none; }
-      .step-right { display: contents; }
     }
 
     /* ─── CONTACT ─── */
@@ -703,12 +653,28 @@
 
     .price-card:hover { background: #fff; }
 
-    .price-card--accent { background: var(--charcoal); }
-    .price-card--accent:hover { background: #252525; }
-    .price-card--accent .price-tag { color: var(--accent-light); }
-    .price-card--accent h3 { color: #fff; }
-    .price-card--accent .price-desc { color: rgba(255,255,255,0.5); }
-    .price-card--accent .price-ideal { color: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.1); }
+    .price-card--accent {
+      background: var(--warm-white);
+      border: 1px solid var(--accent-light);
+      position: relative;
+    }
+    .price-card--accent::after {
+      content: 'Популярно';
+      position: absolute;
+      top: -1px; right: 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 0 0 3px 3px;
+    }
+    .price-card--accent:hover { background: var(--cream); }
+    .price-card--accent .price-tag { color: var(--accent); }
+    .price-card--accent h3 { color: var(--charcoal); }
+    .price-card--accent .price-desc { color: var(--mid); }
+    .price-card--accent .price-ideal { color: var(--light); border-color: var(--border); }
 
     .price-tag {
       font-family: 'Cormorant Garamond', serif;
@@ -1091,7 +1057,17 @@
     }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
+
+    /* Large desktop nav — shrink font at ~1100px */
+    @media (max-width: 1100px) {
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.72rem; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
       #hero {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -1099,36 +1075,51 @@
         padding-bottom: 60px;
         gap: 40px;
       }
-
       .hero-image-wrap { order: -1; }
       .photo-frame { max-width: 280px; margin: 0 auto; }
       .photo-frame::before { display: none; }
 
-      .pricing-grid { grid-template-columns: 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .form-wrap { grid-template-columns: 1fr; gap: 40px; }
-      .field-row { grid-template-columns: 1fr; }
-      .radio-group { grid-template-columns: 1fr; }
-      .contact-row { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-facts { grid-template-columns: 1fr 1fr; }
 
+      /* Services: always 2 cols between 580–980 */
       .services-grid { grid-template-columns: 1fr 1fr; }
 
-      .steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+      /* Pricing: 2 cols */
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
 
+      /* Process: 2 cols */
+      .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .steps::before { display: none; }
+
+      /* Reviews: 1 col */
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      /* Form */
+      .form-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .field-row { grid-template-columns: 1fr 1fr; }
+      .radio-group { grid-template-columns: 1fr 1fr; }
+
+      /* Contact */
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 700px) {
       .services-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
-      .about-facts { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 0; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .about-facts { grid-template-columns: 1fr 1fr; }
+      .field-row { grid-template-columns: 1fr; }
+      .radio-group { grid-template-columns: 1fr; }
+      .contact-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .about-facts { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
       .footer-links { justify-content: center; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
     }
   </style>
 
@@ -1370,51 +1361,31 @@
 
 ```
     <div class="step fade-up">
-      <div class="step-left">
-        <div class="step-num">01</div>
-        <div class="step-dot"></div>
-        <div class="step-connector"></div>
-      </div>
-      <div class="step-right">
-        <h3>Первичная консультация</h3>
-        <p>Обсуждаем вашу ситуацию, задачи и цели. Определяем, чем и как я могу помочь.</p>
-      </div>
+      <div class="step-num">01</div>
+      <div class="step-dot"></div>
+      <h3>Первичная консультация</h3>
+      <p>Обсуждаем вашу ситуацию, задачи и цели. Определяем, чем и как я могу помочь.</p>
     </div>
 
     <div class="step fade-up">
-      <div class="step-left">
-        <div class="step-num">02</div>
-        <div class="step-dot"></div>
-        <div class="step-connector"></div>
-      </div>
-      <div class="step-right">
-        <h3>Анализ ситуации</h3>
-        <p>Изучаю документы, статус, запрос. Подбираю подходящий банк и стратегию.</p>
-      </div>
+      <div class="step-num">02</div>
+      <div class="step-dot"></div>
+      <h3>Анализ ситуации</h3>
+      <p>Изучаю документы, статус, запрос. Подбираю подходящий банк и стратегию.</p>
     </div>
 
     <div class="step fade-up">
-      <div class="step-left">
-        <div class="step-num">03</div>
-        <div class="step-dot"></div>
-        <div class="step-connector"></div>
-      </div>
-      <div class="step-right">
-        <h3>Подготовка документов</h3>
-        <p>Составляем необходимый пакет. Объясняю что, зачем и в каком виде нужно банку.</p>
-      </div>
+      <div class="step-num">03</div>
+      <div class="step-dot"></div>
+      <h3>Подготовка документов</h3>
+      <p>Составляем необходимый пакет. Объясняю что, зачем и в каком виде нужно банку.</p>
     </div>
 
     <div class="step fade-up">
-      <div class="step-left">
-        <div class="step-num">04</div>
-        <div class="step-dot"></div>
-        <div class="step-connector"></div>
-      </div>
-      <div class="step-right">
-        <h3>Сопровождение</h3>
-        <p>Нахожусь рядом на всех этапах — от подачи до финального решения.</p>
-      </div>
+      <div class="step-num">04</div>
+      <div class="step-dot"></div>
+      <h3>Сопровождение</h3>
+      <p>Нахожусь рядом на всех этапах — от подачи до финального решения.</p>
     </div>
 
   </div>
