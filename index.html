@@ -4,12 +4,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Максим — консультации по банковским вопросам в Испании. Счета, ипотека, автокредиты, сопровождение клиентов в Барселоне." />
-  <meta name="keywords" content="банковский консультант Испания, открытие счета Испания, ипотека Испания, финансовые услуги Барселона, помощь с банком Испания" />
-  <meta property="og:title" content="Максим — Банковские консультации в Испании" />
-  <meta property="og:description" content="Консультации и сопровождение по банковским вопросам в Испании. Барселона." />
+  <meta name="description" content="Максим — консультации по банковским вопросам в Испании на русском языке. Помощь с открытием счёта, ипотекой и автокредитом в Барселоне. Сопровождение клиентов." />
+  <meta name="keywords" content="банковский консультант Испания, открытие счета Испания русский, ипотека Испания русскоязычный, помощь с банком Барселона, автокредит Испания, консультация банк Испания, русский консультант Барселона" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Максим" />
+  <link rel="canonical" href="https://maxim-gusev.pro/" />
+
+  <!-- Open Graph -->
+
+  <meta property="og:title" content="Максим — Банковские консультации в Испании на русском" />
+  <meta property="og:description" content="Помощь с открытием счёта, ипотекой и кредитами в Испании. Консультации на русском языке. Барселона." />
   <meta property="og:type" content="website" />
-  <title>Максим — Банковские консультации в Испании</title>
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://maxim-gusev.pro/" />
+  <meta property="og:image" content="https://maxim-gusev.pro/photo.jpg" />
+
+  <!-- Twitter Card -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Максим — Банковские консультации в Испании" />
+  <meta name="twitter:description" content="Консультации по банковским вопросам в Испании на русском языке. Барселона." />
+
+  <title>Максим — Банковские консультации в Испании на русском | Барселона</title>
+
+  <!-- Schema.org structured data -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Максим",
+    "jobTitle": "Банковский консультант",
+    "description": "Консультации по банковским вопросам в Испании на русском языке. Помощь с открытием счёта, ипотекой, автокредитами и сопровождением в банках.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Барселона",
+      "addressCountry": "ES"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://t.me/maxim_spain",
+        "availableLanguage": "Russian"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+34656557670",
+        "availableLanguage": "Russian"
+      }
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Spain"
+    },
+    "knowsLanguage": "Russian",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Консультация по банковским вопросам",
+        "price": "80",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Помощь с открытием счёта",
+        "price": "150",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Сопровождение по ипотеке",
+        "price": "500",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts -->
 
@@ -412,7 +484,21 @@
     }
 
     /* ─── PROCESS ─── */
-    #process { background: var(--charcoal); }
+    #process {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #process::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,115,85,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
     #process .divider { background: rgba(255,255,255,0.15); }
 
@@ -429,40 +515,104 @@
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
+      gap: 0;
       margin-top: 60px;
+      position: relative;
     }
 
-    .step { }
+    /* horizontal connector line */
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 12px;
+      right: 12px;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .step {
+      padding: 0 24px 0 0;
+      position: relative;
+    }
 
     .step-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      color: rgba(255,255,255,0.08);
+      font-size: 2.8rem;
+      color: rgba(255,255,255,0.07);
       line-height: 1;
-      margin-bottom: 16px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .step-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      margin: 14px 0 24px;
+      position: relative;
+      z-index: 1;
     }
 
     .step h3 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #fff;
       margin-bottom: 10px;
       font-weight: 500;
       font-family: 'Jost', sans-serif;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
     }
 
     .step p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.65;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
     }
 
-    .step-line {
-      width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      margin: 20px 0;
+    /* mobile: vertical timeline */
+    @media (max-width: 700px) {
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .steps::before { display: none; }
+      .step {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 0 20px;
+        padding: 0 0 36px;
+        align-items: start;
+      }
+      .step:last-child { padding-bottom: 0; }
+      .step-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .step-dot { margin: 4px 0 0; }
+      .step-connector {
+        width: 1px;
+        flex: 1;
+        min-height: 60px;
+        background: rgba(255,255,255,0.08);
+        margin-top: 8px;
+      }
+      .step:last-child .step-connector { display: none; }
+      .step-num {
+        font-size: 1.6rem;
+        color: rgba(255,255,255,0.12);
+        text-align: center;
+        line-height: 1;
+        margin-bottom: 2px;
+      }
+      .step-right { padding-top: 0; }
+    }
+
+    @media (min-width: 701px) {
+      .step-left { display: contents; }
+      .step-connector { display: none; }
+      .step-right { display: contents; }
     }
 
     /* ─── CONTACT ─── */
@@ -779,6 +929,16 @@
     .form-success.show { display: block; }
     .form-success h3 { margin-bottom: 12px; }
     .form-success p { font-size: 0.88rem; }
+
+    .form-block-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
 
     .form-disclaimer {
       font-size: 0.72rem;
@@ -1210,31 +1370,51 @@
 
 ```
     <div class="step fade-up">
-      <div class="step-num">01</div>
-      <div class="step-line"></div>
-      <h3>Первичная консультация</h3>
-      <p>Обсуждаем вашу ситуацию, задачи и цели. Определяем, чем и как я могу помочь.</p>
+      <div class="step-left">
+        <div class="step-num">01</div>
+        <div class="step-dot"></div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-right">
+        <h3>Первичная консультация</h3>
+        <p>Обсуждаем вашу ситуацию, задачи и цели. Определяем, чем и как я могу помочь.</p>
+      </div>
     </div>
 
     <div class="step fade-up">
-      <div class="step-num">02</div>
-      <div class="step-line"></div>
-      <h3>Анализ ситуации</h3>
-      <p>Изучаю документы, статус, запрос. Подбираю подходящий банк и стратегию.</p>
+      <div class="step-left">
+        <div class="step-num">02</div>
+        <div class="step-dot"></div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-right">
+        <h3>Анализ ситуации</h3>
+        <p>Изучаю документы, статус, запрос. Подбираю подходящий банк и стратегию.</p>
+      </div>
     </div>
 
     <div class="step fade-up">
-      <div class="step-num">03</div>
-      <div class="step-line"></div>
-      <h3>Подготовка документов</h3>
-      <p>Составляем необходимый пакет. Объясняю что, зачем и в каком виде нужно банку.</p>
+      <div class="step-left">
+        <div class="step-num">03</div>
+        <div class="step-dot"></div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-right">
+        <h3>Подготовка документов</h3>
+        <p>Составляем необходимый пакет. Объясняю что, зачем и в каком виде нужно банку.</p>
+      </div>
     </div>
 
     <div class="step fade-up">
-      <div class="step-num">04</div>
-      <div class="step-line"></div>
-      <h3>Сопровождение</h3>
-      <p>Нахожусь рядом на всех этапах — от подачи до финального решения.</p>
+      <div class="step-left">
+        <div class="step-num">04</div>
+        <div class="step-dot"></div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step-right">
+        <h3>Сопровождение</h3>
+        <p>Нахожусь рядом на всех этапах — от подачи до финального решения.</p>
+      </div>
     </div>
 
   </div>
@@ -1273,10 +1453,13 @@
     </div>
 
     <div class="fade-up">
-      <!-- ВАЖНО: замените YOUR_FORM_ID на ID из Formspree (см. инструкцию ниже) -->
+      <!-- ВАЖНО: замените YOUR_FORM_ID на ID из Formspree -->
       <form class="anketa" id="anketa"
             action="https://formspree.io/f/YOUR_FORM_ID"
             method="POST">
+
+        <!-- БЛОК 1: О себе -->
+        <div class="form-block-title">О вас</div>
 
         <div class="field-row">
           <div class="field-group">
@@ -1284,74 +1467,169 @@
             <input type="text" id="f-name" name="name" placeholder="Александр" required />
           </div>
           <div class="field-group">
-            <label for="f-city">Город / регион</label>
+            <label for="f-city">Город / регион в Испании</label>
             <input type="text" id="f-city" name="city" placeholder="Барселона" />
           </div>
         </div>
 
         <div class="field-group">
+          <label>Как давно вы в Испании? *</label>
+          <select name="time_in_spain" required>
+            <option value="" disabled selected>Выберите вариант</option>
+            <option>Ещё не приехал — планирую переезд</option>
+            <option>Менее 6 месяцев</option>
+            <option>6–12 месяцев</option>
+            <option>1–3 года</option>
+            <option>Более 3 лет</option>
+          </select>
+        </div>
+
+        <div class="field-group">
           <label>Ваш статус в Испании *</label>
           <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="status" value="Резидент" required />
-              Резидент
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="status" value="Нерезидент" />
-              Нерезидент
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="status" value="В процессе оформления" />
-              В процессе оформления
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="status" value="Другое" />
-              Другое
-            </label>
+            <label class="radio-option"><input type="radio" name="status" value="Резидент (есть TIE/ВНЖ)" required />Резидент (есть TIE/ВНЖ)</label>
+            <label class="radio-option"><input type="radio" name="status" value="Нерезидент (NIE без ВНЖ)" />Нерезидент (NIE без ВНЖ)</label>
+            <label class="radio-option"><input type="radio" name="status" value="В процессе оформления документов" />В процессе оформления</label>
+            <label class="radio-option"><input type="radio" name="status" value="Гражданин ЕС" />Гражданин ЕС</label>
           </div>
         </div>
+
+        <div class="field-group">
+          <label>Источник дохода *</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="income_type" value="Трудовой контракт в Испании" required />Контракт в Испании</label>
+            <label class="radio-option"><input type="radio" name="income_type" value="Autónomo (самозанятый)" />Autónomo</label>
+            <label class="radio-option"><input type="radio" name="income_type" value="Доход из-за рубежа" />Доход из-за рубежа</label>
+            <label class="radio-option"><input type="radio" name="income_type" value="Пенсия / пассивный доход" />Пенсия / пассивный доход</label>
+            <label class="radio-option"><input type="radio" name="income_type" value="Собственный бизнес в Испании" />Бизнес в Испании</label>
+            <label class="radio-option"><input type="radio" name="income_type" value="Пока нет официального дохода" />Нет официального дохода</label>
+          </div>
+        </div>
+
+        <!-- БЛОК 2: Запрос -->
+        <div class="form-block-title" style="margin-top:8px">Ваш запрос</div>
 
         <div class="field-group">
           <label>С каким вопросом обращаетесь? *</label>
           <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="topic" value="Открытие счёта" required />
-              Открытие счёта
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="topic" value="Ипотека" />
-              Ипотека
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="topic" value="Кредит / автокредит" />
-              Кредит / автокредит
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="topic" value="Другой вопрос" />
-              Другой вопрос
-            </label>
+            <label class="radio-option"><input type="radio" name="topic" value="Открытие счёта" required />Открытие счёта</label>
+            <label class="radio-option"><input type="radio" name="topic" value="Ипотека" />Ипотека</label>
+            <label class="radio-option"><input type="radio" name="topic" value="Потребительский кредит" />Потребкредит</label>
+            <label class="radio-option"><input type="radio" name="topic" value="Автокредит" />Автокредит</label>
+            <label class="radio-option"><input type="radio" name="topic" value="Подготовка документов" />Подготовка документов</label>
+            <label class="radio-option"><input type="radio" name="topic" value="Другой вопрос" />Другое</label>
+          </div>
+        </div>
+
+        <!-- Условные поля — счёт -->
+        <div class="field-group conditional-account">
+          <label for="f-bank">Какой банк интересует? (если есть предпочтение)</label>
+          <input type="text" id="f-bank" name="preferred_bank" placeholder="CaixaBank, Sabadell, BBVA, Santander..." />
+        </div>
+
+        <!-- Условные поля — ипотека -->
+        <div class="conditional-mortgage" style="display:none">
+          <div class="field-row">
+            <div class="field-group">
+              <label for="f-prop-price">Стоимость недвижимости (€)</label>
+              <input type="text" id="f-prop-price" name="property_price" placeholder="250 000" />
+            </div>
+            <div class="field-group">
+              <label for="f-downpay">Первоначальный взнос (€)</label>
+              <input type="text" id="f-downpay" name="down_payment" placeholder="75 000" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Недвижимость — основное жильё или инвестиция?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="property_purpose" value="Основное жильё" />Основное жильё</label>
+              <label class="radio-option"><input type="radio" name="property_purpose" value="Инвестиция / аренда" />Инвестиция / аренда</label>
+              <label class="radio-option"><input type="radio" name="property_purpose" value="Дача / второй дом" />Второй дом</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Условные поля — кредит/авто -->
+        <div class="conditional-credit" style="display:none">
+          <div class="field-row">
+            <div class="field-group">
+              <label for="f-loan-amount">Нужная сумма кредита (€)</label>
+              <input type="text" id="f-loan-amount" name="loan_amount" placeholder="15 000" />
+            </div>
+            <div class="field-group">
+              <label for="f-loan-purpose">Цель кредита</label>
+              <input type="text" id="f-loan-purpose" name="loan_purpose" placeholder="Автомобиль, ремонт..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- БЛОК 3: Финансовая картина -->
+        <div class="form-block-title" style="margin-top:8px">Финансовая картина</div>
+
+        <div class="field-group">
+          <label>Примерный официальный доход в месяц (€)</label>
+          <select name="monthly_income">
+            <option value="" disabled selected>Выберите диапазон</option>
+            <option>До €1 000</option>
+            <option>€1 000 – €2 000</option>
+            <option>€2 000 – €3 500</option>
+            <option>€3 500 – €5 000</option>
+            <option>Более €5 000</option>
+            <option>Предпочитаю не указывать</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label>Есть ли действующие кредиты или ипотека в Испании?</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="existing_debt" value="Нет" />Нет</label>
+            <label class="radio-option"><input type="radio" name="existing_debt" value="Да, небольшие" />Да, небольшие</label>
+            <label class="radio-option"><input type="radio" name="existing_debt" value="Да, значительные" />Да, значительные</label>
           </div>
         </div>
 
         <div class="field-group">
-          <label for="f-desc">Кратко опишите ситуацию *</label>
-          <textarea id="f-desc" name="description"
-            placeholder="Например: переехал 6 месяцев назад, есть ВНЖ, работаю по контракту, хочу открыть счёт в CaixaBank..." required></textarea>
+          <label>Были ли отказы банков ранее по вашему запросу?</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="rejections" value="Нет, не обращался" />Нет, не обращался</label>
+            <label class="radio-option"><input type="radio" name="rejections" value="Нет отказов" />Обращался — отказов не было</label>
+            <label class="radio-option"><input type="radio" name="rejections" value="Был 1 отказ" />Был 1 отказ</label>
+            <label class="radio-option"><input type="radio" name="rejections" value="Было несколько отказов" />Было несколько отказов</label>
+          </div>
+        </div>
+
+        <!-- БЛОК 4: Дополнительно -->
+        <div class="form-block-title" style="margin-top:8px">Дополнительно</div>
+
+        <div class="field-group">
+          <label>Насколько срочно?</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="urgency" value="Не срочно — изучаю варианты" />Не срочно</label>
+            <label class="radio-option"><input type="radio" name="urgency" value="В течение месяца" />В течение месяца</label>
+            <label class="radio-option"><input type="radio" name="urgency" value="Срочно — в течение 1–2 недель" />Срочно</label>
+          </div>
         </div>
 
         <div class="field-group">
-          <label>Как удобно связаться? *</label>
-          <div class="contact-row">
-            <select name="contact_type">
-              <option value="Telegram">Telegram</option>
-              <option value="WhatsApp">WhatsApp</option>
-              <option value="Email">Email</option>
-            </select>
+          <label for="f-desc">Опишите ситуацию подробнее (по желанию)</label>
+          <textarea id="f-desc" name="description"
+            placeholder="Расскажите любые детали, которые считаете важными — это поможет мне лучше подготовиться к разговору." style="min-height:120px"></textarea>
+        </div>
+
+        <!-- БЛОК 5: Контакт -->
+        <div class="form-block-title" style="margin-top:8px">Как с вами связаться</div>
+
+        <div class="contact-row">
+          <select name="contact_type">
+            <option value="Telegram">Telegram</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Email">Email</option>
+          </select>
+          <div class="field-group" style="margin:0">
             <input type="text" name="contact_value" placeholder="@username или номер телефона" required />
           </div>
         </div>
 
-        <!-- скрытое поле — откуда пришёл -->
         <input type="hidden" name="_subject" value="Новая анкета с сайта maxim-spain" />
         <input type="hidden" name="_language" value="ru" />
 
@@ -1565,6 +1843,19 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ─── Conditional form fields ───
+    document.querySelectorAll('input[name="topic"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const val = radio.value;
+        const mortgage = document.querySelectorAll('.conditional-mortgage');
+        const credit = document.querySelectorAll('.conditional-credit');
+        const account = document.querySelectorAll('.conditional-account');
+        mortgage.forEach(el => el.style.display = val === 'Ипотека' ? 'block' : 'none');
+        credit.forEach(el => el.style.display = (val === 'Потребительский кредит' || val === 'Автокредит') ? 'block' : 'none');
+        account.forEach(el => el.style.display = val === 'Открытие счёта' ? 'block' : 'none');
+      });
+    });
 
     // ─── Form submission ───
     const anketa = document.getElementById('anketa');
