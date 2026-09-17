@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Замените на ваш реальный домен
-
-Sitemap:https://maxim-gusev.pro/sitemap.xml
+Sitemap: https://maxim-gusev.pro/sitemap.xml
