@@ -257,8 +257,17 @@
     /* ── FINANCE & TAX — белый, продолжает блок услуг ── */
     #finance-tax { background: var(--white); }
 
-    /* ── PRICING — кремовый ── */
-    #pricing { background: var(--cream); }
+    /* ── GUIDES — кремовый ── */
+    #guides { background: var(--cream); }
+    .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 8px; }
+    .guide-card { background: var(--white); border: 1px solid var(--border); padding: 32px; border-radius: 2px; }
+    .guide-card h3 { margin-bottom: 16px; color: var(--ink); }
+    .guide-card ul { display: flex; flex-direction: column; gap: 10px; }
+    .guide-card li { font-size: 0.86rem; color: var(--mid); line-height: 1.6; padding-left: 18px; position: relative; }
+    .guide-card li::before { content: '—'; color: var(--gold); position: absolute; left: 0; }
+
+    /* ── PRICING — белый ── */
+    #pricing { background: var(--white); }
     .pricing-intro { max-width: 560px; margin-top: 6px; }
     .pricing-group-title {
       font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em;
@@ -296,8 +305,8 @@
     .pricing-note svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
     .pricing-note p { font-size: 0.82rem; }
 
-    /* ── QUESTIONNAIRE — белый ── */
-    #questionnaire { background: var(--white); }
+    /* ── QUESTIONNAIRE — кремовый ── */
+    #questionnaire { background: var(--cream); }
     .form-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 88px; align-items: start; }
     .form-steps { margin-top: 36px; display: flex; flex-direction: column; gap: 18px; }
     .form-step { display: flex; align-items: flex-start; gap: 16px; }
@@ -392,8 +401,8 @@
     .review-name { font-size: 0.86rem; font-weight: 500; color: var(--ink); }
     .review-meta { font-size: 0.72rem; color: var(--light); margin-top: 2px; }
 
-    /* ── FAQ — кремовый ── */
-    #faq { background: var(--cream); }
+    /* ── FAQ — белый ── */
+    #faq { background: var(--white); }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 52px; }
     .faq-item { background: var(--white); padding: 32px; cursor: pointer; transition: background 0.2s; }
     .faq-item:hover { background: var(--warm); }
@@ -473,6 +482,7 @@
       .photo-frame { max-width: 260px; }
       .photo-frame::after { display: none; }
       .about-grid { grid-template-columns: 1fr; gap: 44px; }
+      .guide-grid { grid-template-columns: 1fr; }
       .form-wrap { grid-template-columns: 1fr; gap: 44px; }
       .contact-grid { grid-template-columns: 1fr; gap: 52px; }
       .faq-grid { grid-template-columns: 1fr; }
@@ -525,6 +535,7 @@
   <a href="#about" class="menu-link">О специалисте</a>
   <a href="#services" class="menu-link">Услуги</a>
   <a href="#finance-tax" class="menu-link">Финансы и налоги</a>
+  <a href="#guides" class="menu-link">Полезно знать</a>
   <a href="#pricing" class="menu-link">Стоимость</a>
   <a href="#process" class="menu-link">Как работаем</a>
   <a href="#reviews" class="menu-link">Отзывы</a>
@@ -710,6 +721,54 @@
         <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 3l4 4-4 4"/><path d="M21 7H9a4 4 0 0 0-4 4v1"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12a4 4 0 0 0 4-4v-1"/></svg>
         <h3>Двойное налогообложение</h3>
         <p>Разбор соглашения об избежании двойного налогообложения РФ–Испания.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+
+<section id="guides">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Полезно знать</span>
+      <h2>Что реально<br>волнует экспатов</h2>
+      <div class="rule"></div>
+      <p style="max-width:640px">Коротко о том, что чаще всего спрашивают и обсуждают на форумах русскоязычных в Испании. Актуально на 2026 год — детали лучше уточнять на консультации, правила меняются.</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card fade-up">
+        <h3>Счета: непростая ситуация</h3>
+        <ul>
+          <li>Из-за санкций часть банков ограничила или прекратила открытие счетов для граждан РФ и Беларуси, некоторые закрывают уже действующие</li>
+          <li>Ситуация у каждого банка своя и может измениться — общие списки в интернете быстро устаревают</li>
+          <li>В любом случае понадобятся: NIE, паспорт, подтверждение адреса</li>
+          <li>На консультации разберём, какие банки сейчас реально работают в вашей ситуации</li>
+        </ul>
+      </div>
+      <div class="guide-card fade-up">
+        <h3>Налоговый календарь для autónomo</h3>
+        <ul>
+          <li>Modelo 130 и 303 (IRPF и IVA) — каждый квартал, до 20 января, апреля, июля и октября</li>
+          <li>Renta — годовая декларация IRPF, подаётся с апреля по июнь</li>
+          <li>Modelo 720 — декларация зарубежных активов, до 31 марта, если сумма от €50 000</li>
+        </ul>
+      </div>
+      <div class="guide-card fade-up">
+        <h3>Закон Бэкхема: короткое окно</h3>
+        <ul>
+          <li>Подать нужно в течение 6 месяцев с момента получения резидентства</li>
+          <li>Даёт фиксированную ставку 24% вместо прогрессивной шкалы до 47%</li>
+          <li>Подходит не всем — нужен разбор конкретной ситуации</li>
+        </ul>
+      </div>
+      <div class="guide-card fade-up">
+        <h3>Ипотека для нерезидентов</h3>
+        <ul>
+          <li>Банки обычно финансируют 60–70% стоимости объекта, а не 80%, как резидентам</li>
+          <li>Нужен стабильный подтверждённый доход</li>
+          <li>Одобрение обычно занимает дольше, чем для резидентов</li>
+        </ul>
       </div>
     </div>
   </div>
