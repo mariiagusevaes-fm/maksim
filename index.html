@@ -245,10 +245,10 @@
     #services { background: var(--white); }
     .section-head { margin-bottom: 56px; }
     .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: flex; flex-wrap: wrap; justify-content: center;
       border: 1px solid var(--border); gap: 1px; background: var(--border);
     }
-    .service-card { background: var(--white); padding: 40px 32px; transition: background 0.2s; }
+    .service-card { background: var(--white); padding: 40px 32px; transition: background 0.2s; flex: 1 1 calc(33.333% - 1px); max-width: calc(33.333% - 1px); }
     .service-card:hover { background: var(--warm); }
     .svc-icon { width: 44px; height: 44px; color: var(--gold); margin-bottom: 22px; }
     .service-card h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 10px; }
@@ -274,11 +274,11 @@
       text-transform: uppercase; color: var(--light); margin: 0 0 22px;
     }
     .pricing-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
+      display: flex; flex-wrap: wrap; justify-content: center;
       border: 1px solid var(--border); gap: 1px; background: var(--border);
       margin: 52px 0 20px;
     }
-    .price-card { background: var(--white); padding: 38px 34px; transition: background 0.2s; position: relative; }
+    .price-card { background: var(--white); padding: 38px 34px; transition: background 0.2s; position: relative; flex: 1 1 calc(50% - 1px); max-width: calc(50% - 1px); }
     .price-card:hover { background: var(--warm); }
     .price-card--featured { background: var(--ink); }
     .price-card--featured:hover { background: var(--dark); }
@@ -403,8 +403,8 @@
 
     /* ── FAQ — белый ── */
     #faq { background: var(--white); }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 52px; }
-    .faq-item { background: var(--white); padding: 32px; cursor: pointer; transition: background 0.2s; }
+    .faq-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 52px; }
+    .faq-item { background: var(--white); padding: 32px; cursor: pointer; transition: background 0.2s; flex: 1 1 calc(50% - 1px); max-width: calc(50% - 1px); }
     .faq-item:hover { background: var(--warm); }
     .faq-q {
       display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
@@ -485,16 +485,15 @@
       .guide-grid { grid-template-columns: 1fr; }
       .form-wrap { grid-template-columns: 1fr; gap: 44px; }
       .contact-grid { grid-template-columns: 1fr; gap: 52px; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .faq-item { flex-basis: 100%; max-width: 100%; }
+      .service-card { flex-basis: calc(50% - 1px); max-width: calc(50% - 1px); }
       .reviews-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
       .step-dash { display: none; }
     }
     @media (max-width: 620px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
+      .service-card { flex-basis: 100%; max-width: 100%; }
+      .price-card { flex-basis: 100%; max-width: 100%; }
       .steps { grid-template-columns: 1fr; gap: 28px; }
       .about-facts { grid-template-columns: 1fr 1fr; }
       .field-row { grid-template-columns: 1fr; }
@@ -785,12 +784,12 @@
       <p class="pricing-intro">Работаю на стороне клиента — не банка и не налоговой. Независимая оценка ситуации и рекомендации в ваших интересах.</p>
     </div>
 
-    <div class="pricing-grid fade-up" style="grid-template-columns:1fr; max-width:520px; margin:0 auto 48px">
-      <div class="price-card">
+    <div class="pricing-grid fade-up" style="max-width:520px; margin:0 auto 48px">
+      <div class="price-card" style="max-width:100%">
         <div class="price-amount">Бесплатно</div>
         <h3>Первичная консультация</h3>
-        <p>60 минут: разбираем вашу ситуацию — банк, инвестиции, налоги или autónomo — и намечаем следующий шаг.</p>
-        <div class="price-footer">Без обязательств</div>
+        <p>60 минут: разбираем вашу ситуацию — банк, инвестиции, налоги или autónomo — и уходите с конкретным планом действий.</p>
+        <div class="price-footer">Первый шаг</div>
       </div>
     </div>
 
@@ -875,7 +874,7 @@
 
     <div class="pricing-note fade-up" style="margin-top:36px">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p>Точная стоимость зависит от сложности ситуации. Обсудим на первой консультации — без обязательств.</p>
+      <p>Точная стоимость зависит от вашей ситуации — назову её сразу на консультации, а не по ходу работы.</p>
     </div>
   </div>
 </section>
@@ -1171,7 +1170,7 @@
         <span class="eyebrow">Контакты</span>
         <h2>Обсудим<br>вашу ситуацию</h2>
         <div class="rule"></div>
-        <p class="contact-lead">Напишите в мессенджер — отвечаю лично. Расскажите о вашем запросе, и я отвечу в ближайшее время.</p>
+        <p class="contact-lead">Напишите в мессенджер — отвечаю лично, в течение дня. Расскажите о вашей ситуации, а не общий вопрос — так быстрее пойму, чем помочь.</p>
         <div class="contact-btns">
           <a href="https://t.me/maxim_spain" target="_blank" class="btn-tg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
